@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Náhodné koule</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ball {
+      border-radius: 50%;
+      margin: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const numberOfBalls = 100;
+
+  for (let i = 0; i < numberOfBalls; i++) {
+    const ball = document.createElement('div');
+    const size = Math.floor(Math.random() * 100) + 20; // velikost mezi 20px a 120px
+    const color = `hsl(${Math.random() * 360}, 70%, 60%)`; // náhodná barva
+
+    ball.style.width = size + 'px';
+    ball.style.height = size + 'px';
+    ball.style.backgroundColor = color;
+
+    ball.classList.add('ball');
+    document.body.appendChild(ball);
+  }
+</script>
+
+</body>
+</html>
